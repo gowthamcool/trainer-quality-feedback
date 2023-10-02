@@ -1,0 +1,9 @@
+<h1>Quality Teaching Practice Assessment</h1>
+<form class="feedback-section" *ngFor="let question of questions">
+  <label for="">{{question.question}}</label><br>
+  <input type="text" width="100%">
+  <input type="range" name="score" id="" #score>
+  <p>{{score.value}}</p>
+</form>
+
+
