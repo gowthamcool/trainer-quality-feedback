@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="container login-container">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="field">
+      <label for="" class="login-label">User Name</label>
+      <br>
+      <input type="text" class="login-input" formControlName="userName">
+    </div>
+    <div class="field">
+      <label for="" class="login-label">Password</label>
+      <br>
+      <input type="password" class="login-input" formControlName="password">
+    </div>
+    <div class="login-actions text-center">
+      <a [routerLink]="['/passwordReset']">forgot password? Reset it</a>
+    <br>
+    <button class="btn login-btn" type="submit" (submit)="login()">Login</button>
+    </div>
+  </form>
+</div>

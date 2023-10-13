@@ -7,6 +7,10 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { FeedbackDisplayComponent } from './feedback-display/feedback-display.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,16 @@ import { LoginComponent } from './login/login.component';
     FeedbackFormComponent,
     FeedbackDisplayComponent,
     UserListComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

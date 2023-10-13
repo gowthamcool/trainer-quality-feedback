@@ -1,0 +1,14 @@
+ [
+    { "question": "Content Mastery", "isRating": true },
+    { "question": "Lesson Planning", "isRating": true },
+    { "question": "Communication Skill", "isRating": true },
+    { "question": "Confidence", "isRating": true },
+    { "question": "Query Resolution", "isRating": true },
+    { "question": "Time Management", "isRating": true },
+    { "question": "Practicle Approach", "isRating": true },
+    { "question": "Innovation and Creativity", "isRating": true },
+    { "question": "Problem solving guidence", "isRating": true },
+    { "question": "Use of Technology", "isRating": true },
+    { "question": "Additional Comments", "isRating": false }
+  ]
+

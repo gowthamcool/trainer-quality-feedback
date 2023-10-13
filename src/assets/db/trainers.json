@@ -1,0 +1,69 @@
+ [
+  {
+    "employeeId":234,
+    "employeeName":"Gowtham",
+    "dateOfJoining":"12/12/2020",
+    "salary":20000,
+    "experience":"3 years 5 months",
+    "skillSet":["HTML 5","CSS 3","JavaScript","Angular","NodeJs","ExpressJS","MongoDB","ReactJS","Java","MySQL","JQuery"],
+    "jobType":"PartTime",
+    "designation":"Trainer",
+    "time": "10:00 - 12:00",
+    "userName":"Gowtham234"
+  },
+  {
+    "employeeId":123,
+    "employeeName":"Khushi",
+    "dateOfJoining":"12/12/2020",
+    "salary":20000,
+    "experience":"3 years 5 months",
+    "skillSet":["HTML 5","CSS 3","JavaScript","Angular","NodeJs","ExpressJS","MongoDB","ReactJS","Java","MySQL","JQuery"],
+    "jobType":"PartTime",
+    "designation":"Trainer",
+    "time": "10:00 - 12:00",
+    "userName": "Khushi123"
+  },{
+    "employeeId":456,
+    "employeeName":"Praveen",
+    "dateOfJoining":"12/12/2020",
+    "salary":20000,
+    "experience":"3 years 5 months",
+    "skillSet":["HTML 5","CSS 3","JavaScript","Angular","NodeJs","ExpressJS","MongoDB","ReactJS","Java","MySQL","JQuery"],
+    "jobType":"PartTime",
+    "designation":"Trainer",
+    "time": "10:00 - 12:00",
+    "userName":"Praveen456"
+  },{
+    "employeeId":345,
+    "employeeName":"Manoj",
+    "dateOfJoining":"12/12/2020",
+    "salary":20000,
+    "experience":"3 years 5 months",
+    "skillSet":["HTML 5","CSS 3","JavaScript","Angular","NodeJs","ExpressJS","MongoDB","ReactJS","Java","MySQL","JQuery"],
+    "jobType":"PartTime",
+    "designation":"Trainer",
+    "time": "10:00 - 12:00",
+    "userName":"Manoj345"
+  },{
+    "employeeId":567,
+    "employeeName":"vijay",
+    "dateOfJoining":"12/12/2020",
+    "salary":20000,
+    "experience":"3 years 5 months",
+    "skillSet":["HTML 5","CSS 3","JavaScript","Angular","NodeJs","ExpressJS","MongoDB","ReactJS","Java","MySQL","JQuery"],
+    "jobType":"PartTime",
+    "designation":"Trainer",
+    "time": "10:00 - 12:00",
+    "userName":"Vijay456"
+  },
+  {
+    "employeeId":"001",
+    "employeeName":"Spoorthi",
+    "dateOfJoining":"19/05/2020",
+    "salary":80000,
+    "experience":"3 years 5 months",
+    "skillSet":["Accounting","Marketing","Leadership","Business Decisions"],
+    "designation":"Admin",
+    "userName":"Spoorthi001"
+  }
+]

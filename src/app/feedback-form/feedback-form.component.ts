@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-feedback-form',
@@ -6,26 +7,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback-form.component.scss'],
 })
 export class FeedbackFormComponent implements OnInit {
-  questions = [
-    { question: 'Trainer Name', isRating: false },
-    { question: 'Evaluator Name', isRating: false },
-    { question: 'Date', isRating: false },
-    { question: 'Day', isRating: false },
-    { question: 'Course', isRating: false },
-    { question: 'Topic', isRating: false },
-    {question: "Content Mastery", isRating: true},
-    {question: "Lesson Planning", isRating: true},
-    {question: "Communication Skill", isRating: true},
-    {question: "Confidence", isRating: true},
-    {question: "Query Resolution", isRating: true},
-    {question: "Time Management", isRating: true},
-    {question: "Practicle Approach", isRating: true},
-    {question: "Innovation and Creativity", isRating: true},
-    {question: "Problem solving guidence", isRating: true},
-    {question: "Use of Technology", isRating: true},
-    {question: "Additional Comments", isRating: true},
-  ];
-  constructor() {}
+  questions:any = [ ];
+  answers:any = [];
+  staff:any = [];
+  courses =  [];
+  total =0;
+  day = '';
+  constructor(private api:ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.api.getCourses().subscribe((res:any)=>{
+      this.courses = res;
+    });
+    this.api.getTrainers().subscribe((res:any)=>{
+      this.staff = res;
+    })
+    this.api.getQuestions().subscribe((res:any)=>{
+      this.questions=res.data.questions;
+    },(err)=>{console.log(err);
+    },()=>{
+      this.questions.map((question:any)=>{
+        question.answer = '';
+        question.score = 0;
+      })
+    });
+    console.log(JSON.stringify(this.questions));
+
+  }
+  calculateTotal(){
+    this.questions.forEach((question:any)=>{this.total+=question.score});
+  }
+  showDay(date:string){
+    const dayno = new Date(date).getDay();
+    const days = ["Sunday","Monday","Tuesday","Wednesday","thursday","Friday","Saturday"];
+    this.day = days[dayno];
+  }
+  submitFeedback(){
+    console.log(JSON.stringify(this.questions))
+    this.questions.forEach((question:any)=>{
+      this.answers.push({question:question.question,score:question.score})
+    })
+  }
 }

@@ -1,9 +1,64 @@
 <h1>Quality Teaching Practice Assessment</h1>
-<form class="feedback-section" *ngFor="let question of questions">
-  <label for="">{{question.question}}</label><br>
-  <input type="text" width="100%">
-  <input type="range" name="score" id="" #score>
-  <p>{{score.value}}</p>
-</form>
+<div class="container">
+  <div class="details-section">
+    <form>
+      <div class="line">
+        <div class="trainer head-control">
+          <label for="">Trainer's Name:</label>
+          <select name="" id="">
+            <option value="" *ngFor="let trainer of staff">{{trainer}}</option>
+          </select>
+        </div>
+        <div class="evaluator head-control">
+          <label for="">Evaluator's Name:</label>
+          <select name="" id="">
+            <option value="" *ngFor="let evaluator of staff">{{evaluator}}</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="line">
+        <div class="course head-control">
+          <label for="">Course:</label>
+          <select name="" id="">
+            <option value="" *ngFor="let course of courses">{{course}}</option>
+          </select>
+        </div>
+        <div class="topic head-control">
+          <label for="">Topic:</label>
+          <input type="text" id="topic">
+        </div>
+      </div>
+      <br>
+      <div class="line">
+        <div class="date head-control">
+          <label for="">Date:</label>
+        <input type="date" name="dateVal" id="" (change)="showDay(dateVal.value)" #dateVal>
+        </div>
+        <div class="date head-control">
+          <label for="">Day:</label>
+          <label  *ngIf="dateVal.value">{{day}}</label>
+        </div>
+      </div>
+      <br>
+    </form>
+  </div>
+  <div class="rating-section">
+    <form class="feedback-section" *ngFor="let question of questions">
+      <label for="">{{question.question}}</label><br>
+      <div class="score-box"  *ngIf="question.isRating">
+        <input type="range" name="score" id="" min="0" max="10" step="1" [defaultValue]="0" [(ngModel)]="question.score" (change)="calculateTotal()">
+        <p>{{question.score}}/10</p>
+      </div>
+      <textarea name="answers" class="suggestion" [(ngModel)]="question.answer"></textarea>
+    </form>
+  </div>
+  <div class="action-footer">
+    <p *ngIf="total!==0">Total Score:{{total}}</p>
+    <div class="actions">
+      <button (click)="calculateTotal()">Calculate total</button>
+      <button (click)="submitFeedback()">Submit</button>
+    </div>
+  </div>
 
-
+</div>

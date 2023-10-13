@@ -1,0 +1,34 @@
+[
+  {
+    "courseId":"FE01",
+    "courseName":"venilla js[HTML 5, CSS 3, JavaScript]",
+    "duration(in months)":2,
+    "topics":["introduction to html","html tags","layouts and formats","CSS introduction","CSS Selectors","Display and Position","images","RWD","Animations","introduction to JS","JS Terminologies","conditions & loops","Arrays & Strings","Objects","DOM","Scopes","Asynchronous programming","ES6","Form validations","AJAX","REST API"],
+    "fees":12000,
+    "approxNoOfClasses": 35
+  },
+  {
+    "courseId":"FE02",
+    "courseName":"Angular",
+    "duration(in months)":1,
+    "topics":["introduction to Angular","Angular Terminologies","data communication between components","directives","pipes","services","REST API","routers","modules","rxjs","ngrx","gaurds"],
+    "fees":12000,
+    "approxNoOfClasses": 15
+  },
+  {
+    "courseId":"FE03",
+    "courseName":"React JS",
+    "duration(in months)":1,
+    "topics":["introduction to React","React Terminologies","JSX","Redux","React hooks","Form validations","REST API","routers","modules"],
+    "fees":12000,
+    "approxNoOfClasses": 35
+  },
+  {
+    "courseId":"BE01",
+    "courseName":"Java",
+    "duration(in months)":3,
+    "topics":["introduction to Java","Java Terminologies","conditions & loops","Arrays & Strings","Objects & class","OOP","Collections","Anonymous Function","Threads","Error Handling","JDBC","REST API","Hibernate","SpringBoot","JUnit","SOA"],
+    "fees":15000,
+    "approxNoOfClasses": 50
+  }
+]
