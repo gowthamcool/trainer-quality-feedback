@@ -1,1 +1,35 @@
-<p>feedback-display works!</p>
+<h1>{{heading}}</h1>
+<div *ngIf="isTrainer" style="text-align: right;padding-right: 2rem;padding-bottom: 2rem;">
+  <button class="btn btn-primary" (click)="openFeedback()">Give Feedback</button>
+</div>
+<div *ngIf="!isTrainer" style="text-align: right;padding-right: 2rem;padding-bottom: 2rem;">
+  <button class="btn btn-primary" (click)="addQuestion()">Add Question</button>
+</div>
+<div style="text-align: left;padding-right: 2rem;padding-bottom: 2rem;">
+  <button class="btn btn-success" (click)="logout()">Logout</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Trainer name</th>
+      <th>Evaluator name</th>
+      <th>Course</th>
+      <th>Date</th>
+      <th>Score</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let feedback of feedbacks">
+      <td [ngClass]="feedback.needReview?'review-validator':''">{{feedback.trainerName}}</td>
+      <td>{{feedback.evaluatorName}}</td>
+      <td>{{feedback.course}}</td>
+      <td>{{feedback.Date}}</td>
+      <td>80</td>
+      <td>
+        <button class="btn btn-primary" (click)="viewDetails(feedback)">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 *ngIf="isTrainer">You need to provide reviews for {{needReviewCounter}} feedbacks</h3>

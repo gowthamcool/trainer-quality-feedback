@@ -1,3 +1,6 @@
 export enum apiUrls {
-  GetQuestions = '/questions'
+  Questions = '/questions',
+  Answers = '/answers',
+  Courses = '/courses',
+  Users = '/users'
 }

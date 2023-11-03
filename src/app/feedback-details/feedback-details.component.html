@@ -1,0 +1,74 @@
+<h1>Feedback Details for {{ details.trainerName }}</h1>
+<div class="container">
+  <div style="text-align: left;padding-right: 2rem;padding-bottom: 2rem;">
+    <button class="btn btn-success" (click)="logout()">Logout</button>
+  </div>
+  <div class="details-section" *ngIf="!isError">
+    <form>
+      <div class="line">
+        <div class="trainer head-control">
+          <label for="">Trainer's Name:</label>
+          <span>{{details.trainerName }}</span>
+        </div>
+        <div class="evaluator head-control">
+          <label for="">Evaluator's Name:</label>
+          <span>{{details.evaluatorName}}</span>
+        </div>
+      </div>
+      <br />
+      <div class="line">
+        <div class="course head-control">
+          <label for="">Course:</label>
+          <span>{{details.course}}</span>
+        </div>
+        <div class="topic head-control">
+          <label for="">Topic:</label>
+          <span>{{details.topic}}</span>
+        </div>
+      </div>
+      <br />
+      <div class="line">
+        <div class="date head-control">
+          <label for="">Date:</label>
+          <span>{{details.Date}}</span>
+        </div>
+        <div class="date head-control">
+          <label for="">Day:</label>
+          <span>{{day}}</span>
+        </div>
+      </div>
+      <br />
+    </form>
+  </div>
+  <div class="rating-section" *ngIf="!isError">
+    <form class="feedback-section" *ngFor="let question of details.questions">
+      <label for="">{{ question.question }}</label
+      ><span>{{question.answer}} </span>
+      <span>{{question.score}}/10</span>
+    </form>
+  </div>
+  <p *ngIf="!isError">Total Score:{{ details.totalScore }}</p>
+  <div class="my-feedback" *ngIf="!isError && isAnswered">
+    <form class="feedback-form">
+      <div class="feedback-input">
+        <label for="">What I Accomplished?</label>
+        <textarea name="accomplished" id="" cols="30" rows="5" [(ngModel)]="accomplished" [readOnly]="isAnswered"></textarea>
+      </div>
+      <div class="feedback-input">
+        <label for="">What I didn't Accomplished?</label>
+        <textarea name="hudle" id="" cols="30" rows="5" [(ngModel)]="hudle" [readOnly]="isAnswered"></textarea>
+      </div>
+      <div class="feedback-input">
+        <label for="">What I can do to improve myself?</label>
+        <textarea name="improve" id="" cols="30" rows="5" [(ngModel)]="improvement" [readOnly]="isAnswered"></textarea>
+      </div>
+      <div class="text-center" *ngIf="!isAnswered">
+        <button class="btn btn-primary" (click)="completeFeedback()">Submit</button>
+      </div>
+    </form>
+  </div>
+  <h1 class="error-msg" *ngIf="isError">
+    Sorry We're unable to process your application right now. please try again
+    later
+  </h1>
+</div>

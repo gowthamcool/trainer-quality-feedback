@@ -1,0 +1,68 @@
+<div class="container">
+  <div style="text-align: left;padding-right: 2rem;padding-bottom: 2rem;">
+    <button class="btn btn-success" (click)="logout()">Logout</button>
+  </div>
+  <h3 class="pb-4 heading">Quality Teaching Practice Assessment</h3>
+  <div class="details-section" *ngIf="!isError">
+    <form>
+      <div class="line">
+        <div class="trainer head-control">
+          <label for="">Trainer's Name:</label>
+          <select name="trainer" id="" [(ngModel)]="trainerName">
+            <option [value]="trainer" *ngFor="let trainer of employees">{{trainer}}</option>
+          </select>
+        </div>
+        <div class="evaluator head-control">
+          <label for="">Evaluator's Name:</label>
+          <input name="evaluator" id="" type="text" [(ngModel)]="evaluatorName" readonly>
+        </div>
+      </div>
+      <br>
+      <div class="line">
+        <div class="course head-control">
+          <label for="">Course:</label>
+          <select name="course" id="" [(ngModel)]="course">
+            <option [value]="course" *ngFor="let course of courses">{{course}}</option>
+          </select>
+        </div>
+        <div class="topic head-control">
+          <label for="">Topic:</label>
+          <input type="text" id="topic" name="topic" [(ngModel)]="topic">
+        </div>
+      </div>
+      <br>
+      <div class="line">
+        <div class="date head-control">
+          <label for="">Date:</label>
+        <input type="date" name="dateVal" id="" (change)="showDay(dateVal.value)" #dateVal>
+        </div>
+        <div class="date head-control">
+          <label for="">Day:</label>
+          <label  *ngIf="dateVal.value">{{day}}</label>
+        </div>
+      </div>
+      <br>
+    </form>
+  </div>
+  <div class="rating-section" *ngIf="!isError">
+    <form class="feedback-section" #rating = "ngForm">
+      <div class="question-container"  *ngFor="let question of questions">
+        <label for="">{{question.question}}</label><br>
+      <div class="score-box"  *ngIf="question.isRating">
+        <input type="range" name="score" id="" min="0" max="10" step="1" [defaultValue]="0" [(ngModel)]="question.score" (change)="updateScore(question)">
+        <p>{{question.score}}/10</p>
+      </div>
+      <textarea name="answers" class="suggestion" [(ngModel)]="question.answer" [required]="question.required"></textarea>
+      </div>
+      <div class="action-footer">
+        <p *ngIf="total!==0">Total Score:{{total}}</p>
+        <div class="actions">
+          <button (click)="submitFeedback()" [disabled]="rating.status !== 'VALID'">Submit</button>
+        </div>
+      </div>
+    </form>
+    <p>{{rating.status}}</p>
+  </div>
+  <h1 class="error-msg" *ngIf="isError">Sorry We're unable to process your application right now. please try again later</h1>
+
+</div>

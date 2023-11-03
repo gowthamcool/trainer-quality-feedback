@@ -1,0 +1,54 @@
+.container {
+  padding: 4rem;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-size: 1.2rem;
+    padding-right: 1rem;
+    font-weight: 700;
+  }
+  select,
+  input {
+    width: 10rem;
+    padding: 5px;
+  }
+}
+.suggestion {
+  width: 100%;
+}
+.score-box {
+  display: flex;
+}
+.rating-section {
+  background-color: #cecece;
+  padding: 2rem;
+}
+.feedback-section {
+  padding-top: 2rem;
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+.feedback-form{
+  padding: 2rem;
+
+  .feedback-input{
+    padding-top: 2rem;
+
+    label{
+      padding-bottom: 1rem;
+    }
+    textarea{
+      width: 100%;
+
+      &:read-only{
+        background-color: #cecece;
+      }
+    }
+  }
+}

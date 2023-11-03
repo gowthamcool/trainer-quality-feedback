@@ -5,3 +5,6 @@ $primary: #003481;
 $white: #fff;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+input:read-only{
+  background-color: grey;
+}

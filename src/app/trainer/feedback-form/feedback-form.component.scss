@@ -1,6 +1,9 @@
 .container {
   padding: 4rem;
 }
+.heading{
+  color: #2f2f2f;
+}
 .line {
   display: flex;
   justify-content: space-between;
@@ -8,7 +11,8 @@
   label {
     font-size: 1.2rem;
     padding-right: 1rem;
-    font-weight: 700;
+    font-weight: 400;
+    color: #2f2f2f;
   }
   select,
   input {
@@ -23,7 +27,8 @@
   display: flex;
 }
 .rating-section {
-  background-color: #cecece;
+  background-color: #000e50;
+  color: #fff;
   padding: 2rem;
 }
 .feedback-section {
@@ -31,13 +36,13 @@
 
   label {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 300;
   }
 }
 .action-footer {
   padding: 2rem;
-  background: #0a2a70;
-  margin-top: 1rem;
+  background: #000e50;
+  color: #fff;
 
   .actions {
     display: flex;
@@ -48,6 +53,15 @@
       border-radius: 20px;
       color: #fff;
       background: transparent;
+
+      &:hover{
+        background-color: #fff;
+        color: #000e50;
+      }
+
+      &:disabled{
+        opacity: 0.3;
+      }
     }
   }
 }

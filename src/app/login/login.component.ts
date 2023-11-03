@@ -20,12 +20,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    this.api.postLogin(this.loginForm.value).subscribe((res:any)=>{
-      if(res.status>400){
+    this.api.loginUser(this.loginForm.value).subscribe((res:any)=>{
+      if(res.status == "error"){
         this.router.navigate(['/errorpage']);
       }
       else{
-        this.router.navigate(['/dashboard']);
+        localStorage.setItem("token",res.token);
+        localStorage.setItem("userName",res.user.employeeName);
+        localStorage.setItem("role",res.user.role);
+          this.router.navigate(['/dashboard']);
       }
     })
   }
